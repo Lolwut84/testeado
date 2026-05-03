@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Digital</title>
+
+  <!-- Fuente Poppins desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       SECCION CARRUSEL DE PROMOCIONES
+       ---------------------------------------------------------------
+       - Fondo oscuro color #314A1F
+       - Encabezado verde con texto "PROMOS IMPERDIBLES"
+       - Cada diapositiva muestra: etiqueta PROMO, descripcion, precio e imagen
+       - Autoplay cada 5 segundos, loop infinito
+       - Se pausa al pasar el mouse (escritorio)
+       - Swipe con dedo (movil) y arrastre con mouse (escritorio)
+       - Cambia de slide si se arrastra mas del 30% del ancho
+       - Puntitos indicadores generados automaticamente por script.js
+       - Sin flechas de navegacion
+  ============================================================ -->
+  <section class="seccion-carrusel">
+
+    <!-- Barra verde superior con el titulo -->
+    <div class="carrusel-encabezado">
+      <h1 class="carrusel-titulo">PROMOS IMPERDIBLES</h1>
+    </div>
+
+    <!-- Pista deslizante: contiene todas las diapositivas en fila horizontal -->
+    <div class="carrusel-pista" id="carrusel-pista">
+
+      <!-- ==========================
+           DIAPOSITIVA 1
+           Cambiar src de la imagen por el archivo PNG real del producto
+      ========================== -->
+      <div class="carrusel-diapositiva">
+
+        <!-- Bloque izquierdo: texto descriptivo y caja de precio -->
+        <div class="promo-info">
+          <p class="promo-descripcion">Coca Cola 500ml +<br>Pancho con papas</p>
+          <div class="promo-precio">3.000$</div>
+        </div>
+
+        <!-- Imagen del producto a la derecha (usar PNG con fondo transparente) -->
+        <div class="promo-imagen-contenedor">
+          <img class="promo-imagen" src="imagen-promo-1.png" alt="Promo 1" />
+        </div>
+
+      </div>
+
+      <!-- ==========================
+           DIAPOSITIVA 2
+           Cambiar src de la imagen por el archivo PNG real del producto
+      ========================== -->
+      <div class="carrusel-diapositiva">
+
+        <div class="promo-info">
+          <p class="promo-descripcion">Coca Cola 500ml +<br>Pancho con papas</p>
+          <div class="promo-precio">5.000$</div>
+        </div>
+
+        <div class="promo-imagen-contenedor">
+          <img class="promo-imagen" src="imagen-promo-2.png" alt="Promo 2" />
+        </div>
+
+      </div>
+
+      <!-- ==========================
+           DIAPOSITIVA 3 (opcional - se puede duplicar o eliminar)
+      ========================== -->
+      <div class="carrusel-diapositiva">
+        <div class="promo-info">
+          <p class="promo-descripcion">Nombre del producto<br>y descripcion aqui</p>
+          <div class="promo-precio">4.500$</div>
+        </div>
+
+        <div class="promo-imagen-contenedor">
+          <img class="promo-imagen" src="imagen-promo-3.png" alt="Promo 3" />
+        </div>
+
+      </div>
+
+    </div>
+    <!-- FIN PISTA -->
+
+    <!-- Puntitos indicadores: generados y controlados por script.js -->
+    <div class="carrusel-indicadores" id="carrusel-indicadores"></div>
+
+  </section>
+
+
+  <!-- ============================================================
+       SECCION CONTENIDO PRINCIPAL
+       ---------------------------------------------------------------
+       - Fondo beige claro (#E6E0CE)
+       - Zona libre para agregar categorias, productos o cualquier
+         bloque de contenido del menu digital
+  ============================================================ -->
+  <section class="seccion-contenido" id="seccion-contenido">
+
+    <!--
+      AGREGAR CONTENIDO AQUI
+      Ejemplos posibles:
+        - Grilla de categorias (Salados, Dulces, Bebidas)
+        - Subcategorias (Snacks, Golosinas, Otros)
+        - Listado de productos con precio e imagen
+    -->
+
+  </section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
