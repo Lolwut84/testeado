@@ -157,7 +157,10 @@ img {
 /* Contenedor de la imagen a la derecha */
 .promo-imagen-contenedor {
   flex-shrink: 0;
-  width: 55%
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* La imagen en si: PNG con fondo transparente recomendado */
@@ -166,7 +169,7 @@ img {
   height: auto;
   object-fit: contain;
   pointer-events: none;      /* Evita que la imagen interfiera con el arrastre */
-  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.5));
 }
 
 
