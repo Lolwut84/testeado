@@ -157,7 +157,7 @@ img {
 /* Contenedor de la imagen a la derecha */
 .promo-imagen-contenedor {
   flex-shrink: 0;
-  width: 60%
+  width: 55%
 }
 
 /* La imagen en si: PNG con fondo transparente recomendado */
