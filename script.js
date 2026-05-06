@@ -15,8 +15,8 @@
      CONFIGURACION
      Modificar estos valores para ajustar el comportamiento
   ---------------------------------------------------------- */
-  var INTERVALO_MS       = 5000;   /* Milisegundos entre cambios automaticos */
-  var UMBRAL_PORCENTAJE  = 0.20;   /* Fraccion minima de arrastre para cambiar slide (0 a 1) */
+  var INTERVALO_MS       = 2500;   /* Milisegundos entre cambios automaticos */
+  var UMBRAL_PORCENTAJE  = 0.10;   /* Fraccion minima de arrastre para cambiar slide (0 a 1) */
 
 
   /* ----------------------------------------------------------
