@@ -1,245 +1,155 @@
-/* ============================================================
-   VARIABLES GLOBALES
-   Cambiar estos valores para modificar el tema de toda la pagina
-   sin tocar el resto del codigo
-============================================================ */
-:root {
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Digital</title>
 
-  /* --- Colores del carrusel --- */
-  --color-fondo-carrusel: #314A1F;          /* Fondo oscuro de la seccion de promos */
-  --color-barra-titulo: #0DFF00;            /* Verde de la barra "PROMOS IMPERDIBLES" */
-  --color2-barra-titulo: #2B651A;           /* Verde de la barra "PROMOS IMPERDIBLES" */
-  --color-titulo-carrusel: #ffffff;         /* Texto blanco del titulo */
-  --color-etiqueta-promo: #F29E2E;          /* Amarillo verdoso de "PROMO 1", "PROMO 2" */
-  --color-texto-promo: #ffffff;             /* Texto blanco de la descripcion del producto */
-  --color-fondo-precio: #CC2222;            /* Rojo de la caja de precio */
-  --color2-fondo-precio: #840303; 
-  --color-texto-precio: #ffffff;            /* Texto blanco dentro de la caja de precio */
+  <!-- Fuente Poppins desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet" />
 
-  /* --- Colores de los indicadores (puntitos) --- */
-  --color-puntito-activo: #ffffff;
-  --color-puntito-inactivo: rgba(255, 255, 255, 0.35);
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
 
-  /* --- Colores de la seccion de contenido --- */
-  --color-fondo-contenido: #E6E0CE;         /* Beige claro debajo del carrusel */
+  <!-- ============================================================
+       SECCION CARRUSEL DE PROMOCIONES
+       ---------------------------------------------------------------
+       - Fondo oscuro color #314A1F
+       - Encabezado verde con texto "PROMOS IMPERDIBLES"
+       - Cada diapositiva muestra: etiqueta PROMO, descripcion, precio e imagen
+       - Autoplay cada 5 segundos, loop infinito
+       - Se pausa al pasar el mouse (escritorio)
+       - Swipe con dedo (movil) y arrastre con mouse (escritorio)
+       - Cambia de slide si se arrastra mas del 30% del ancho
+       - Puntitos indicadores generados automaticamente por script.js
+       - Sin flechas de navegacion
+  ============================================================ -->
+  <section class="seccion-carrusel">
 
-  /* --- Tipografia --- */
-  --fuente: 'Poppins', sans-serif;
+    <!-- Barra verde superior con el titulo -->
+    <div class="carrusel-encabezado">
+      <h1 class="carrusel-titulo">¡PROMOS IMPERDIBLES!</h1>
+    </div>
 
-  /* --- Medidas reutilizables --- */
-  --radio-precio: 8px;
-  --radio-tarjeta: 12px;
-}
+    <!-- Pista deslizante: contiene todas las diapositivas en fila horizontal -->
+    <div class="carrusel-pista" id="carrusel-pista">
 
+      <!-- ==========================
+           DIAPOSITIVA 1
+           Cambiar src de la imagen por el archivo PNG real del producto
+      ========================== -->
+      <div class="carrusel-diapositiva">
 
-/* ============================================================
-   RESET Y BASE
-============================================================ */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+        <!-- Bloque izquierdo: texto descriptivo y caja de precio -->
+        <div class="promo-info">
+          <p class="promo-descripcion">SANDWICH DE MIGA</br>3 UNIDADES</p>
+          <div class="promo-precio">$3.500</div>
+        </div>
 
-html, body {
-  height: 100%;
-}
+        <!-- Imagen del producto a la derecha (usar PNG con fondo transparente) -->
+        <div class="promo-imagen-contenedor">
+          <img class="promo-imagen" src="imagen-promo-1.png" alt="Promo 1" />
+        </div>
 
-body {
-  font-family: var(--fuente);
-  background-color: var(--color-fondo-contenido);
-  /* Ancho fijo tipo pantalla de celular; centrado en pantallas grandes */
+      </div>
 
-  margin: 0 auto;
-  overflow-x: hidden;
-}
+      <!-- ==========================
+           DIAPOSITIVA 2
+           Cambiar src de la imagen por el archivo PNG real del producto
+      ========================== -->
+      <div class="carrusel-diapositiva">
 
-img {
-  display: block;
-  max-width: 100%;
-}
+        <div class="promo-info">
+          <p class="promo-descripcion">MILA DE POLLO +<br>PAPAS FRITAS</p>
+          <div class="promo-precio">$5.000</div>
+        </div>
 
+        <div class="promo-imagen-contenedor">
+          <img class="promo-imagen" src="imagen-promo-2.png" alt="Promo 2" />
+        </div>
 
-/* ============================================================
-   SECCION CARRUSEL
-============================================================ */
+      </div>
 
-/* Contenedor completo de la zona de promos */
-.seccion-carrusel {
-  background-color: var(--color-fondo-carrusel);
-  width: 100%;
-  overflow: hidden;
-  padding-bottom: 2%;
-}
+      <!-- ==========================
+           DIAPOSITIVA 3 (opcional - se puede duplicar o eliminar)
+      ========================== -->
+      <div class="carrusel-diapositiva">
+        <div class="promo-info">
+          <p class="promo-descripcion">PORCIONES DE PIZZA</br>POR UNIDAD</p>
+          <div class="promo-precio">$1.500</div>
+        </div>
 
-/* Barra verde con el titulo "PROMOS IMPERDIBLES" */
-.carrusel-encabezado {
-  background: linear-gradient(90deg, var(--color-barra-titulo), var(--color2-barra-titulo));
-  width: 100%;
-  padding: 1%;
-  text-align: center;
-}
+        <div class="promo-imagen-contenedor">
+          <img class="promo-imagen" src="imagen-promo-3.png" alt="Promo 3" />
+        </div>
 
-.carrusel-titulo {
-  font-family: var(--fuente);
-  font-size: 17px;
-  font-weight: bold;
-  color: var(--color-titulo-carrusel);
-  text-transform: uppercase;
-}
+      </div>
+      
+      <!-- ==========================
+           DIAPOSITIVA 4 (opcional - se puede duplicar o eliminar)
+      ========================== -->
+      <div class="carrusel-diapositiva">
+        <div class="promo-info">
+          <p class="promo-descripcion">MILA NAPOLITANA +</br>PAPAS FRITAS</p>
+          <div class="promo-precio">$7.000</div>
+        </div>
 
+        <div class="promo-imagen-contenedor">
+          <img class="promo-imagen" src="imagen-promo-3.png" alt="Promo 3" />
+        </div>
 
-/* ============================================================
-   PISTA Y DIAPOSITIVAS
-============================================================ */
+      </div>
 
-/* Pista horizontal: todas las diapositivas juntas una al lado de la otra */
-.carrusel-pista {
-  display: flex;
-  /* La transicion suave se aplica al moverse entre slides */
-  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform;
-  /* El cursor cambia para indicar que se puede arrastrar */
-  cursor: grab;
-  user-select: none;
-  -webkit-user-select: none;
-}
+      <!-- ==========================
+           DIAPOSITIVA 5 (opcional - se puede duplicar o eliminar)
+      ========================== -->
+      <div class="carrusel-diapositiva">
+        <div class="promo-info">
+          <p class="promo-descripcion">HAMBURGUESA CLÁSICA +</br>BEBIDA y PAPAS FRITAS</p>
+          <div class="promo-precio">$4.500</div>
+        </div>
 
-/* Estado mientras el usuario esta arrastrando: sin transicion para seguir el dedo */
-.carrusel-pista.arrastrando {
-  cursor: grabbing;
-  transition: none;
-}
+        <div class="promo-imagen-contenedor">
+          <img class="promo-imagen" src="imagen-promo-3.png" alt="Promo 3" />
+        </div>
 
-/* Cada diapositiva ocupa exactamente el 100% del ancho visible */
-.carrusel-diapositiva {
-  min-width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 36px 22px 20px 22px;
-  gap: 10px;
-}
+      </div>
+      
 
-/* Bloque izquierdo: descripcion del producto + precio */
-.promo-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding-right: 8px;
-}
-
-/* Nombre/descripcion del producto en blanco */
-.promo-descripcion {
-  font-family: var(--fuente);
-  font-size: 15px;
-  font-weight: bold;
-  color: var(--color-texto-promo);
-  line-height: 1.35;
-}
-
-/* Caja roja con el precio */
-.promo-precio {
-  display: inline-block;
-  background:linear-gradient(90deg, var(--color-fondo-precio), var(--color2-fondo-precio));
-  color: var(--color-texto-precio);
-  font-family: var(--fuente);
-  font-size: 30px;
-  font-weight: 1000;
-  padding: 7px 18px;
-  border-radius: var(--radio-precio);
-  align-self: flex-start;    /* No se estira al ancho completo */
-  letter-spacing: 0.5px;
-}
-
-/* Contenedor de la imagen a la derecha */
-.promo-imagen-contenedor {
-  flex-shrink: 0;
-  width: 135px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* La imagen en si: PNG con fondo transparente recomendado */
-.promo-imagen {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  pointer-events: none;      /* Evita que la imagen interfiera con el arrastre */
-  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.3));
-}
+    </div>
 
 
-/* ============================================================
-   INDICADORES (PUNTITOS)
-   Los genera script.js automaticamente segun cuantas
-   diapositivas existan en el HTML
-============================================================ */
+    <!-- FIN PISTA -->
 
-.carrusel-indicadores {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3px;
-  padding-top: 14px;
-}
+    <!-- Puntitos indicadores: generados y controlados por script.js -->
+    <div class="carrusel-indicadores" id="carrusel-indicadores"></div>
 
-/* Cada puntito individual */
-.carrusel-indicadores .puntito {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: var(--color-puntito-inactivo);
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Puntito de la diapositiva activa */
-.carrusel-indicadores .puntito.activo {
-  background-color: var(--color-puntito-activo);
-  transform: scale(1.35);
-}
+  </section>
 
 
-/* ============================================================
-   SECCION CONTENIDO PRINCIPAL
-   Zona libre debajo del carrusel para agregar
-   categorias, productos u otro contenido del menu
-============================================================ */
+  <!-- ============================================================
+       SECCION CONTENIDO PRINCIPAL
+       ---------------------------------------------------------------
+       - Fondo beige claro (#E6E0CE)
+       - Zona libre para agregar categorias, productos o cualquier
+         bloque de contenido del menu digital
+  ============================================================ -->
+  <section class="seccion-contenido" id="seccion-contenido">
 
-.seccion-contenido {
-  background-color: var(--color-fondo-contenido);
-  width: 100%;
-  /* Altura minima para que la seccion sea visible aunque este vacia */
-  min-height: 60vh;
-  padding: 16px 12px;
-}
+    <!--
+      AGREGAR CONTENIDO AQUI
+      Ejemplos posibles:
+        - Grilla de categorias (Salados, Dulces, Bebidas)
+        - Subcategorias (Snacks, Golosinas, Otros)
+        - Listado de productos con precio e imagen
+    -->
+
+  </section>
 
 
-/* ============================================================
-   AJUSTES PARA PANTALLAS MUY PEQUENAS (menos de 360px)
-============================================================ */
-@media (max-width: 359px) {
-
-  .carrusel-titulo {
-    font-size: 14px;
-  }
-
-  .promo-descripcion {
-    font-size: 13px;
-  }
-
-  .promo-precio {
-    font-size: 18px;
-    padding: 6px 14px;
-  }
-
-  .promo-imagen-contenedor {
-    width: 105px;
-  }
-}
+  <script src="script.js"></script>
+</body>
+</html>
