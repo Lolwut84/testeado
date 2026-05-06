@@ -68,6 +68,7 @@ img {
 .seccion-carrusel {
   background-color: var(--color-fondo-carrusel);
   width: 100%;
+  height: auto;
   overflow: hidden;
   padding-bottom: 2%;
 }
