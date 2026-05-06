@@ -157,10 +157,7 @@ img {
 /* Contenedor de la imagen a la derecha */
 .promo-imagen-contenedor {
   flex-shrink: 0;
-  width: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 50%
 }
 
 /* La imagen en si: PNG con fondo transparente recomendado */
