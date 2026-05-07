@@ -1,59 +1,26 @@
-/* ============================================================
-   VARIABLES GLOBALES
-   Cambiar estos valores para modificar el tema de toda la pagina
-   sin tocar el resto del codigo
-============================================================ */
 :root {
+    --fuente: 'Poppins', sans-serif;
+    --color-fuente: #ffffff;
 
-  /* --- Colores del carrusel --- */
-  --color-fondo-carrusel: #314A1F;          /* Fondo oscuro de la seccion de promos */
-  --color-barra-titulo: #0DFF00;            /* Verde de la barra "PROMOS IMPERDIBLES" */
-  --color2-barra-titulo: #2B651A;           /* Verde de la barra "PROMOS IMPERDIBLES" */
-  --color-titulo-carrusel: #ffffff;         /* Texto blanco del titulo */
-  --color-etiqueta-promo: #F29E2E;          /* Amarillo verdoso de "PROMO 1", "PROMO 2" */
-  --color-texto-promo: #ffffff;             /* Texto blanco de la descripcion del producto */
-  --color-fondo-precio: #CC2222;            /* Rojo de la caja de precio */
-  --color2-fondo-precio: #840303; 
-  --color-texto-precio: #ffffff;            /* Texto blanco dentro de la caja de precio */
+    --color-fondo: #E6E0CE;
+    --color-fondo-secundario: #314A1F;
+    
+    --color-tira-promos-1: #0bdb00;
+    --color-tira-promos-2: #2B651A;
+    --color-tarjeta-precio-1: #ffae00;
+    --color-tarjeta-precio-2: #ffae00;
 
-  /* --- Colores de los indicadores (puntitos) --- */
-  --color-puntito-activo: #ffffff;
-  --color-puntito-inactivo: rgba(255, 255, 255, 0.35);
+    --color-puntito-activo: #ffffff;
+    --color-puntito-inactivo: #222222;
 
-  /* --- Colores de la seccion de contenido --- */
-  --color-fondo-contenido: #E6E0CE;         /* Beige claro debajo del carrusel */
-
-  /* --- Tipografia --- */
-  --fuente: 'Poppins', sans-serif;
-
-  /* --- Medidas reutilizables --- */
-  --radio-precio: 8px;
-  --radio-tarjeta: 12px;
+    --radio-general: 14px;
+    --radio-secundario: 8px;
 }
 
-
-/* ============================================================
-   RESET Y BASE
-============================================================ */
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-  min-height: 100vh;      /* Muy importante */
-  overflow: hidden;       /* Evita el scroll completamente */
-}
-
-body {
-  font-family: var(--fuente);
-  background-color: var(--color-fondo-contenido);
-  /* Ancho fijo tipo pantalla de celular; centrado en pantallas grandes */
-
-  margin: 0 auto;
-  overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 img {
@@ -61,188 +28,136 @@ img {
   max-width: 100%;
 }
 
-
-/* ============================================================
-   SECCION CARRUSEL
-============================================================ */
-
-/* Contenedor completo de la zona de promos */
-.seccion-carrusel {
-  background-color: var(--color-fondo-carrusel);
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  padding-bottom: 2%;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Barra verde con el titulo "PROMOS IMPERDIBLES" */
-.carrusel-encabezado {
-  background: linear-gradient(90deg, var(--color-barra-titulo), var(--color2-barra-titulo));
-  width: 100%;
-  padding: 1%;
-  text-align: center;
+html, body {
+    height: 100%;
+    min-height: 100dvh;
+    overflow: hidden;
 }
 
-.carrusel-titulo {
-  font-family: var(--fuente);
-  font-size: 17px;
-  font-weight: bold;
-  color: var(--color-titulo-carrusel);
-  text-transform: uppercase;
+body {
+    font-family: var(--fuente);
+    background-color: var(--color-fondo);
 }
 
 
-/* ============================================================
-   PISTA Y DIAPOSITIVAS
-============================================================ */
+.tira-promos{
+    width: 100%;
+    padding: 0.2rem;
+    text-align: center;
 
-/* Pista horizontal: todas las diapositivas juntas una al lado de la otra */
-.carrusel-pista {
-  display: flex;
-  /* La transicion suave se aplica al moverse entre slides */
-  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform;
-  /* El cursor cambia para indicar que se puede arrastrar */
-  cursor: grab;
-  user-select: none;
-  -webkit-user-select: none;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+
+    color: var(--color-fuente);
+    background: linear-gradient(90deg, var(--color-tira-promos-1), var(--color-tira-promos-2));
+
 }
 
-/* Estado mientras el usuario esta arrastrando: sin transicion para seguir el dedo */
-.carrusel-pista.arrastrando {
-  cursor: grabbing;
-  transition: none;
+.promos{
+    height: auto;
+    overflow: hidden;
+    color: var(--color-fuente);
+    background-color: var(--color-fondo-secundario);
 }
 
-/* Cada diapositiva ocupa exactamente el 100% del ancho visible */
-.carrusel-diapositiva {
-  min-width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 36px 22px 20px 22px;
-  gap: 10px;
+.promos-contenedor{
+    display: flex;
+    transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+
 }
 
-/* Bloque izquierdo: descripcion del producto + precio */
+.promo {
+    min-width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .promo-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding-right: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1rem;
 }
 
-/* Nombre/descripcion del producto en blanco */
-.promo-descripcion {
-  font-family: var(--fuente);
-  font-size: 15px;
-  font-weight: bold;
-  color: var(--color-texto-promo);
-  line-height: 1.35;
+.promo-descripcion{
+    font-size: clamp(1.0rem, 2.5vw, 1.2rem);
+    line-height: 1.4;
+    font-weight: bold;
 }
 
-/* Caja roja con el precio */
-.promo-precio {
-  display: inline-block;
-  background:linear-gradient(90deg, var(--color-fondo-precio), var(--color2-fondo-precio));
-  color: var(--color-texto-precio);
-  font-family: var(--fuente);
-  font-size: 30px;
-  font-weight: 1000;
-  padding: 7px 18px;
-  border-radius: var(--radio-precio);
-  align-self: flex-start;    /* No se estira al ancho completo */
-  letter-spacing: 0.5px;
+.promo-precio{
+    display: inline-block;
+    align-self: flex-start;
+
+    font-size: clamp(2rem, 3vw, 4rem);
+    font-weight: 1000;
+    letter-spacing: 0.02em;
+    padding: 0.2em 0.5em;
+    
+    border-radius: var(--radio-general);
+    background:linear-gradient(90deg, var(--color-tarjeta-precio-1), var(--color-tarjeta-precio-2));
+
 }
 
-/* Contenedor de la imagen a la derecha */
 .promo-imagen-contenedor {
-  flex-shrink: 0;
-  width: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    padding: 1rem 0;
+    flex: 1 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* La imagen en si: PNG con fondo transparente recomendado */
-.promo-imagen {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  pointer-events: none;      /* Evita que la imagen interfiera con el arrastre */
-  filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.5));
+.promos img{
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+    max-width: none;  
+    border-radius: var(--radio-general) 0 0 var(--radio-general);
 }
 
 
-/* ============================================================
-   INDICADORES (PUNTITOS)
-   Los genera script.js automaticamente segun cuantas
-   diapositivas existan en el HTML
-============================================================ */
-
-.carrusel-indicadores {
+.promos-indicadores {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3px;
-  padding-top: 14px;
+  padding-bottom: 0.5rem;
 }
 
-/* Cada puntito individual */
-.carrusel-indicadores .puntito {
+.promos-indicadores .puntito {
   width: 4px;
   height: 4px;
   border-radius: 50%;
   background-color: var(--color-puntito-inactivo);
   border: none;
-  padding: 0;
-  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Puntito de la diapositiva activa */
-.carrusel-indicadores .puntito.activo {
+.promos-indicadores .puntito.activo {
   background-color: var(--color-puntito-activo);
-  transform: scale(1.35);
 }
 
 
-/* ============================================================
-   SECCION CONTENIDO PRINCIPAL
-   Zona libre debajo del carrusel para agregar
-   categorias, productos u otro contenido del menu
-============================================================ */
 
-.seccion-contenido {
-  background-color: var(--color-fondo-contenido);
-  width: 100%;
-  /* Altura minima para que la seccion sea visible aunque este vacia */
-  min-height: 60vh;
-  padding: 16px 12px;
+.botones-primarios img{
+    width: 25%;
 }
 
+.botones-secundarios img{
+    width: 20%;
+}
 
-/* ============================================================
-   AJUSTES PARA PANTALLAS MUY PEQUENAS (menos de 360px)
-============================================================ */
-@media (max-width: 359px) {
-
-  .carrusel-titulo {
-    font-size: 14px;
-  }
-
-  .promo-descripcion {
-    font-size: 13px;
-  }
-
-  .promo-precio {
-    font-size: 18px;
-    padding: 6px 14px;
-  }
-
-  .promo-imagen-contenedor {
-    width: 105px;
-  }
+.servicios img{
+    width: 25%;
 }
