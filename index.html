@@ -5,151 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menu Digital</title>
 
-  <!-- Fuente Poppins desde Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="estilos.css" />
+  
 </head>
 <body>
 
-  <!-- ============================================================
-       SECCION CARRUSEL DE PROMOCIONES
-       ---------------------------------------------------------------
-       - Fondo oscuro color #314A1F
-       - Encabezado verde con texto "PROMOS IMPERDIBLES"
-       - Cada diapositiva muestra: etiqueta PROMO, descripcion, precio e imagen
-       - Autoplay cada 5 segundos, loop infinito
-       - Se pausa al pasar el mouse (escritorio)
-       - Swipe con dedo (movil) y arrastre con mouse (escritorio)
-       - Cambia de slide si se arrastra mas del 30% del ancho
-       - Puntitos indicadores generados automaticamente por script.js
-       - Sin flechas de navegacion
-  ============================================================ -->
-  <section class="seccion-carrusel">
+  <div class="tira-promos">PRECIOS IMPERDIBLES</div>
 
-    <!-- Barra verde superior con el titulo -->
-    <div class="carrusel-encabezado">
-      <h1 class="carrusel-titulo">¡PROMOS IMPERDIBLES!</h1>
-    </div>
+  <section class="promos">
+    
+    <div class="promos-contenedor">
 
-    <!-- Pista deslizante: contiene todas las diapositivas en fila horizontal -->
-    <div class="carrusel-pista" id="carrusel-pista">
+        <a href="" class="promo">
+            <div class="promo-info">
+                <p class="promo-descripcion">Hamburguesa clásica + Papas fritas + Bebida</p>
+                <div class="promo-precio">$4.000</div>
+            </div>
+            <div class="promo-imagen-contenedor">
+                <img src="imagenes/test.png" alt="Promo 1">
+            </div>
+        </a>
 
-      <!-- ==========================
-           DIAPOSITIVA 1
-           Cambiar src de la imagen por el archivo PNG real del producto
-      ========================== -->
-      <div class="carrusel-diapositiva">
+        <a href="" class="promo">
+            <div class="promo-info">
+                <p class="promo-descripcion">Milanesa de pollo + Papas fritas</p>
+                <div class="promo-precio">$5.000</div>
+            </div>
+            <div class="promo-imagen-contenedor">
+                <img src="imagenes/test2.png" alt="Promo 1">
+            </div>
+        </a>
 
-        <!-- Bloque izquierdo: texto descriptivo y caja de precio -->
-        <div class="promo-info">
-          <p class="promo-descripcion">SANDWICH DE MIGA</br>3 UNIDADES</p>
-          <div class="promo-precio">$3.500</div>
-        </div>
+        <a href="" class="promo">
+            <div class="promo-info">
+                <p class="promo-descripcion">Porción de pizza por unidad</p>
+                <div class="promo-precio">$1.500</div>
+            </div>
+            <div class="promo-imagen-contenedor">
+                <img src="imagenes/test3.png" alt="Promo 1">
+            </div>
+        </a>
 
-        <!-- Imagen del producto a la derecha (usar PNG con fondo transparente) -->
-        <div class="promo-imagen-contenedor">
-          <img class="promo-imagen" src="imagen-promo-1.png" alt="Promo 1" />
-        </div>
-
-      </div>
-
-      <!-- ==========================
-           DIAPOSITIVA 2
-           Cambiar src de la imagen por el archivo PNG real del producto
-      ========================== -->
-      <div class="carrusel-diapositiva">
-
-        <div class="promo-info">
-          <p class="promo-descripcion">MILA DE POLLO +<br>PAPAS FRITAS</p>
-          <div class="promo-precio">$5.000</div>
-        </div>
-
-        <div class="promo-imagen-contenedor">
-          <img class="promo-imagen" src="imagen-promo-1.png" alt="Promo 2" />
-        </div>
-
-      </div>
-
-      <!-- ==========================
-           DIAPOSITIVA 3 (opcional - se puede duplicar o eliminar)
-      ========================== -->
-      <div class="carrusel-diapositiva">
-        <div class="promo-info">
-          <p class="promo-descripcion">PORCIONES DE PIZZA</br>POR UNIDAD</p>
-          <div class="promo-precio">$1.500</div>
-        </div>
-
-        <div class="promo-imagen-contenedor">
-          <img class="promo-imagen" src="imagen-promo-1.png" alt="Promo 3" />
-        </div>
-
-      </div>
-      
-      <!-- ==========================
-           DIAPOSITIVA 4 (opcional - se puede duplicar o eliminar)
-      ========================== -->
-      <div class="carrusel-diapositiva">
-        <div class="promo-info">
-          <p class="promo-descripcion">MILA NAPOLITANA +</br>PAPAS FRITAS</p>
-          <div class="promo-precio">$7.000</div>
-        </div>
-
-        <div class="promo-imagen-contenedor">
-          <img class="promo-imagen" src="imagen-promo-1.png" alt="Promo 3" />
-        </div>
-
-      </div>
-
-      <!-- ==========================
-           DIAPOSITIVA 5 (opcional - se puede duplicar o eliminar)
-      ========================== -->
-      <div class="carrusel-diapositiva">
-        <div class="promo-info">
-          <p class="promo-descripcion">HAMBURGUESA +</br>BEBIDA + PAPAS FRITAS</p>
-          <div class="promo-precio">$4.500</div>
-        </div>
-
-        <div class="promo-imagen-contenedor">
-          <img class="promo-imagen" src="imagen-promo-1.png" alt="Promo 3" />
-        </div>
-
-      </div>
-      
+        <a href="" class="promo">
+            <div class="promo-info">
+                <p class="promo-descripcion">Milanesa napolitana + Papas fritas</p>
+                <div class="promo-precio">$7.500</div>
+            </div>
+            <div class="promo-imagen-contenedor">
+                <img src="imagenes/test4.png" alt="Promo 1">
+            </div>
+        </a>
 
     </div>
 
-
-    <!-- FIN PISTA -->
-
-    <!-- Puntitos indicadores: generados y controlados por script.js -->
-    <div class="carrusel-indicadores" id="carrusel-indicadores"></div>
+    <div class="promos-indicadores"></div>
 
   </section>
 
+  <section class="botones">
 
-  <!-- ============================================================
-       SECCION CONTENIDO PRINCIPAL
-       ---------------------------------------------------------------
-       - Fondo beige claro (#E6E0CE)
-       - Zona libre para agregar categorias, productos o cualquier
-         bloque de contenido del menu digital
-  ============================================================ -->
-  <section class="seccion-contenido" id="seccion-contenido">
+    <div class="botones-primarios">
+    
+        <a href="" class="boton">
+            <div class="boton-imagen-contenedor">
+                <img src="test.png" alt="Boton 1">
+            </div>
+            <span class="boton-texto">Boton 1</span>
+        </a>
+        
+    </div>
 
-    <!--
-      AGREGAR CONTENIDO AQUI
-      Ejemplos posibles:
-        - Grilla de categorias (Salados, Dulces, Bebidas)
-        - Subcategorias (Snacks, Golosinas, Otros)
-        - Listado de productos con precio e imagen
-    -->
+    <div class="botones-secundarios">
 
+        <a href="" class="boton">
+            <div class="boton-imagen-contenedor">
+                <img src="test.png" alt="Boton 2">
+            </div>
+            <span class="boton-texto">Boton 2</span>
+        </a>
+
+    </div>
   </section>
 
+  <section class="servicios">
 
+    <div class="servicios-contenedor">
+
+        <a href="" class="servicio">
+            <div class="servicio-imagen-contenedor">
+                <img src="test.png" alt="Servicio 1">
+            </div>
+            <p class="servicio-descripcion">Servicio de impresión</p>
+        </a>
+
+    </div>
+    
+  </section>
   <script src="script.js"></script>
 </body>
 </html>
