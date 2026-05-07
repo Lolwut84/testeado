@@ -1,34 +1,16 @@
-/* ============================================================
-   SCRIPT.JS
-   Maneja toda la logica del carrusel de promociones:
-     - Autoplay cada 5 segundos con loop infinito
-     - Pausa al pasar el mouse encima (escritorio)
-     - Swipe tactil (movil) y arrastre con mouse (escritorio)
-     - Cambia de slide si el arrastre supera el 30% del ancho
-     - Genera los puntitos indicadores automaticamente
-     - El puntito correspondiente a la slide activa se activa solo
-============================================================ */
-
 (function () {
 
-  /* ----------------------------------------------------------
-     CONFIGURACION
-     Modificar estos valores para ajustar el comportamiento
-  ---------------------------------------------------------- */
-  var INTERVALO_MS       = 5000;   /* Milisegundos entre cambios automaticos */
+  var INTERVALO_MS       = 4000;   /* Milisegundos entre cambios automaticos */
   var UMBRAL_PORCENTAJE  = 0.15;   /* Fraccion minima de arrastre para cambiar slide (0 a 1) */
 
-
-  /* ----------------------------------------------------------
-     REFERENCIAS AL DOM
-  ---------------------------------------------------------- */
-  var pista              = document.getElementById('carrusel-pista');
-  var contenedorPuntitos = document.getElementById('carrusel-indicadores');
+    var pista              = document.querySelector('.promos-contenedor');
+    var contenedorPuntitos = document.querySelector('.promos-indicadores');
+    
 
   /* Si los elementos no existen en la pagina, salir sin errores */
   if (!pista || !contenedorPuntitos) { return; }
 
-  var diapositivas = pista.querySelectorAll('.carrusel-diapositiva');
+  var diapositivas       = pista.querySelectorAll('.promo');
   var total        = diapositivas.length;
 
   if (total === 0) { return; }
